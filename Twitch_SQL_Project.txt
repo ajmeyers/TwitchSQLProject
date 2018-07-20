@@ -1,0 +1,11 @@
+2) SELECT * FROM chat LIMIT 20; // Gets first 20 rows from chat
+3) DELETE FROM chat where time = 'time'; // Removes first row from chat
+4) SELECT DISTINCT game from stream; // Gets all Distinct Games from stream table, one value is Null
+5) SELECT DISTINCT channel from stream; // Gets all Distinct Channels from stream table, one value is Null
+6) 
+7)
+8)
+9)
+10)
+
+Bonus)
