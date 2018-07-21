@@ -3,7 +3,7 @@
 4) SELECT DISTINCT game from stream where game IS NOT NULL; // Gets all Distinct Games from stream table
 5) SELECT DISTINCT channel from stream where channel IS NOT NULL;  // Gets all Distinct Channels from stream table
 6) SELECT game as games, COUNT(*) as viewers from stream group by game ORDER by viewers DESC; // 15 viewers view a Null game
-7) SELECT country as Location, count(*) as Number_of_League_Players from stream  where game = 'League of Legends' GROUP BY country Order by Number_of_League_Players DESC; // 49 Players come from a NULL country/location
+7) SELECT country as Location, count(*) as Number_of_League_Players from stream  where game = 'League of Legends' GROUP BY country Order by Number_of_League_Players DESC; // 49 League Players come from a NULL Location
 8) 
 9)
 10)
