@@ -1,12 +1,41 @@
-1) SELECT * FROM stream LIMIT 20; // Free answer
-2) SELECT * FROM chat LIMIT 20; // Gets first 20 rows from chat
-3) DELETE FROM chat where time = 'time'; // Removes first row from chat
-4) SELECT DISTINCT game from stream where game IS NOT NULL; // Gets all Distinct Games from stream table
-5) SELECT DISTINCT channel from stream where channel IS NOT NULL;  // Gets all Distinct Channels from stream table
-6) SELECT game as games, COUNT(*) as viewers from stream group by game ORDER by viewers DESC; // 15 viewers view a Null game
-7) SELECT country as Location, count(*) as Number_of_League_Players from stream  where game = 'League of Legends' GROUP BY country Order by Number_of_League_Players DESC; // 49 League Players come from a NULL Location
-8) SELECT player as Players, COUNT(*) as Streamers from stream group by Players ORDER by Streamers DESC; // Most Streamers watch games on site
+1)
+ SELECT * FROM stream LIMIT 20; // Free answer
+
+2) 
+SELECT * FROM chat LIMIT 20; // Gets first 20 rows from chat
+
+3) 
+DELETE FROM chat where time = 'time'; // Removes first row from chat
+
+4) 
+SELECT DISTINCT game from stream where game IS NOT NULL; // Gets all Distinct Games from stream table
+
+5) 
+SELECT DISTINCT channel from stream where channel IS NOT NULL;  // Gets all Distinct Channels from stream table
+
+6) 
+SELECT game as games, COUNT(*) as viewers from stream group by game ORDER by viewers DESC; // 15 viewers view a Null game
+
+7) 
+SELECT country as Location, count(*) as Number_of_League_Players from stream  where game = 'League of Legends' GROUP BY country Order by Number_of_League_Players DESC; // 49 League Players come from a NULL Location
+
+8) 
+SELECT player as Players, COUNT(*) as Streamers from stream group by Players ORDER by Streamers DESC; // Most Streamers watch games on site
+
 9) 
-10) SELECT chat.device_id FROM chat INNER JOIN stream ON stream.device_id=chat.device_id; // INNER JOIN on both device_id columns 
+
+Select game,
+CASE 
+  WHEN game='League of Legends' OR game='Dota 2' OR game='Heroes of the Storm' then 'MOBA'
+  WHEN game='Counter-Strike: Global Offensive' THEN 'FPS'
+  ELSE 'Others'
+END
+'Genre'
+From stream where game IS NOT NULL
+GROUP BY game 
+ORDER by genre;
+
+10) 
+SELECT chat.device_id FROM chat INNER JOIN stream ON stream.device_id=chat.device_id; // INNER JOIN on both device_id columns 
 
 Bonus)
