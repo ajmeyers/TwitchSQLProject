@@ -98,3 +98,9 @@ INNER JOIN stream ON stream.device_id=chat.device_id;
 
 /* Bonus */ 
 
+/* Finding Top 3 Most Popular Streamers (Channels) in stream table */
+
+SELECT channel AS Channel, COUNT(*) AS Viewers
+FROM stream 
+GROUP BY Channel
+ORDER BY Viewers DESC LIMIT 3;
