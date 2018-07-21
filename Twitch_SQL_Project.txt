@@ -1,10 +1,10 @@
 2) SELECT * FROM chat LIMIT 20; // Gets first 20 rows from chat
 3) DELETE FROM chat where time = 'time'; // Removes first row from chat
-4) SELECT DISTINCT game from stream; // Gets all Distinct Games from stream table, one value is Null
-5) SELECT DISTINCT channel from stream; // Gets all Distinct Channels from stream table, one value is Null
-6) 
-7)
-8)
+4) SELECT DISTINCT game from stream where game IS NOT NULL; // Gets all Distinct Games from stream table
+5) SELECT DISTINCT channel from stream where channel IS NOT NULL;  // Gets all Distinct Channels from stream table
+6) SELECT game as games, COUNT(*) as viewers from stream group by game ORDER by viewers DESC; // 15 viewers view a Null game
+7) SELECT country as Location, count(*) as Number_of_League_Players from stream  where game = 'League of Legends' GROUP BY country Order by Number_of_League_Players DESC; // 49 Players come from a NULL country/location
+8) 
 9)
 10)
 
