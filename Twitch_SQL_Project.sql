@@ -66,7 +66,10 @@ ORDER BY Number_of_League_Players DESC;
 
 /* Question 8 */ 
 
-SELECT player AS Players, COUNT(*) AS Streamers FROM stream GROUP BY Players ORDER BY Streamers DESC; 
+SELECT player AS Players, COUNT(*) AS Streamers 
+FROM stream 
+GROUP BY Players 
+ORDER BY Streamers DESC; 
 
 /* Most Streamers watch games on site */
 
